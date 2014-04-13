@@ -1,0 +1,25 @@
+import csv 
+
+#dictionary for choosing examples from a category
+cat_to_ex = {'NOUN_HUM': ['man', 'woman'],
+             'NOUN_ANIM': ['cat', 'mouse'],
+             'NOUN_INANIM': ['book', 'rock'],
+             'NOUN_AGRESS': ['dragon', 'monster'],
+             'NOUN_FRAG': ['glass', 'plate'],
+             'NOUN_FOOD': ['cookie', 'break'],
+             'VERB_INTRAN': ['think', 'sleep'],
+             'VERB_AGPAT': ['movie', 'break'],
+             'VERB_PERCEPT': ['smell', 'see'],
+             'VERB_DESTROY': ['break', 'smash'],
+             'VERB_EAT': ['eat']
+             }
+
+def load_sentence_templates(path_to_csv):
+    template_list = []
+    with open(path_to_csv, 'rb') as f:
+        rdr = csv.reader(f)
+        for line rdr: 
+            line = [w.strip() for w in line]
+            template_list.append(line)
+
+    return template_list
